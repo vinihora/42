@@ -6,13 +6,13 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 10:27:03 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/22 15:26:50 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/05/22 17:00:59 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memset(void *str, int c, size_t n)
+void	*ft_memset(void *str, int c, size_t n)
 {
 	unsigned char	*ptr;
 	unsigned char	letter;
@@ -24,4 +24,5 @@ void	ft_memset(void *str, int c, size_t n)
 		ptr[n - 1] = letter;
 		n--;
 	}
+	return(str);
 }
