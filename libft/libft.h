@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 14:57:51 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/22 17:02:01 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/05/22 19:24:13 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+char	*ft_strdup(const char *s);
 
 #endif

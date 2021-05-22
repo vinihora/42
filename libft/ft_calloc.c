@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:48:59 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/22 16:59:59 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/05/22 19:55:09 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ptr = malloc(nmemb * size);
 	if (nmemb == 0)
 		return (NULL);
-	ft_bzero(ptr, (nmemb * size));
+	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }

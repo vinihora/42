@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 11:44:12 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/22 17:19:16 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/05/22 19:27:39 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_memccpy(void *rstdest, const void *rstsrc, int c, size_t n)
 		{
 			*((char *)ptrdest + i) = *((char *)ptrsrc + i);
 			i++;
-			return ((void*)(rstdest + i + 1));
+			return ((void *)(rstdest + i + 1));
 		}
 		*((char *)ptrdest + i) = *((char *)ptrsrc + i);
 		i++;

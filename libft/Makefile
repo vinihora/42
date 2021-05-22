@@ -6,7 +6,7 @@
 #    By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/22 16:03:19 by veduardo          #+#    #+#              #
-#    Updated: 2021/05/22 17:08:43 by veduardo         ###   ########.fr        #
+#    Updated: 2021/05/22 19:25:26 by veduardo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRC = 	ft_atoi.c \
 		ft_strrchr.c \
 		ft_tolower.c \
 		ft_toupper.c \
+		ft_strdup.c \
 
 all: $(NAME)
 
@@ -51,5 +52,7 @@ clean:
 
 fclean:		clean
 	$(RM) $(NAME)
+
+re: fclean all
 
 .PHONY: all clean fclean
