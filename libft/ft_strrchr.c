@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 11:11:08 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/22 15:33:03 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/05/23 15:45:24 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strrchr(const char *s, int c)
 	unsigned int	lenght;
 
 	lenght = ft_strlen(s);
+	if (c == '\0')
+		return ((char *)s + lenght);
 	while (lenght--)
 	{
 		if ((char)c == s[lenght])
@@ -24,5 +26,5 @@ char	*ft_strrchr(const char *s, int c)
 			return (((char *)s + lenght));
 		}
 	}
-	return (NULL);
+	return (0);
 }
