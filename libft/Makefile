@@ -6,7 +6,7 @@
 #    By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/22 16:03:19 by veduardo          #+#    #+#              #
-#    Updated: 2021/05/22 19:25:26 by veduardo         ###   ########.fr        #
+#    Updated: 2021/05/23 17:26:10 by veduardo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,9 @@ SRC = 	ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c \
 		ft_strdup.c \
+		ft_substr.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
 
 all: $(NAME)
 
