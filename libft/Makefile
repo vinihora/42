@@ -6,7 +6,7 @@
 #    By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/22 16:03:19 by veduardo          #+#    #+#              #
-#    Updated: 2021/05/26 20:02:16 by veduardo         ###   ########.fr        #
+#    Updated: 2021/05/28 16:40:11 by veduardo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,10 @@ SRC = 	ft_atoi.c \
 		ft_strtrim.c \
 		ft_split.c \
 		ft_itoa.c \
+		ft_strmapi.c \
+		ft_putchar_fd.c \
+		ft_putendl_fd.c \
+		ft_putstr_fd.c \
 
 all: $(NAME)
 
