@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 19:26:06 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/27 17:09:20 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/05/31 08:56:29 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_itoa(int n)
 	x = how_much_digits(n);
 	count = 0;
 	arr = 0;
-	if (conditions(n, arr) || how_much_digits(n) == 0)
+	if (conditions(n, arr))
 		return (conditions(n, arr));
 	arr = (char *)malloc((x + 1) * sizeof(char));
 	if (n < 0)
@@ -99,8 +99,8 @@ char	*conditions(int n, char *arr)
 	}
 	if (n == -2147483648)
 	{
-		arr = (char *)malloc(11 * sizeof(char));
-		arr = "-2147483648";
+		arr = (char *)malloc(12 * sizeof(char));
+		ft_strlcpy(arr, "-2147483648", 12);
 	}
 	if (n == 0)
 	{

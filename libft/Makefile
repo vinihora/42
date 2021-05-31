@@ -6,7 +6,7 @@
 #    By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/22 16:03:19 by veduardo          #+#    #+#              #
-#    Updated: 2021/05/28 16:40:11 by veduardo         ###   ########.fr        #
+#    Updated: 2021/05/28 17:04:18 by veduardo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SRC = 	ft_atoi.c \
 		ft_putchar_fd.c \
 		ft_putendl_fd.c \
 		ft_putstr_fd.c \
+		ft_putnbr_fd.c \
 
 all: $(NAME)
 
