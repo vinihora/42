@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 16:44:17 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/22 15:22:02 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/02 12:52:31 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_isprint(int c)
 {
-	unsigned char	letter;
-
-	letter = (unsigned char)c;
-	if ((letter >= 32 && letter <= 126))
+	if ((c >= 32 && c <= 126))
 		return (1);
 	else
 		return (0);

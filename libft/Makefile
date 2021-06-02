@@ -6,7 +6,7 @@
 #    By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/22 16:03:19 by veduardo          #+#    #+#              #
-#    Updated: 2021/05/28 17:04:18 by veduardo         ###   ########.fr        #
+#    Updated: 2021/06/02 12:41:54 by veduardo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,10 @@ $(NAME): $(OBJ)
 
 $(OBJ): $(SRC)
 	$(CC) $(FLAGS) -c $(SRC)
+
+so:
+	$(CC) -nostartfiles -fPIC $(FLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 clean:
 	rm *.o

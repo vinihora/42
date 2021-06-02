@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 16:34:24 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/22 15:20:45 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/02 12:53:09 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 int	ft_isalnum(int c)
 {
-	unsigned char	letter;
-
-	letter = (unsigned char)c;
-	if ((letter >= 'a' && letter <= 'z') || (letter >= 'A' && letter <= 'Z'))
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
-	else if (letter >= '0' && letter <= '9')
+	else if (c >= '0' && c <= '9')
 		return (1);
 	else
 		return (0);
