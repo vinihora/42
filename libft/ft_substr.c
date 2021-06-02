@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 15:50:25 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/23 16:32:34 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/02 11:19:20 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	unsigned int	i;
-	unsigned char	*ret;
+	char			*ret;
 	unsigned int	count;
 
 	ret = malloc(len * sizeof(s));
@@ -31,9 +31,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 				count++;
 				i++;
 			}
+			ret[count] = '\0';
 			return ((char *)ret);
 		}
 		i++;
 	}
-	return (0);
+	return (ret);
 }

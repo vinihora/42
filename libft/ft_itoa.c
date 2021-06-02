@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 19:26:06 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/31 08:56:29 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/02 11:39:57 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ char	*ft_itoa(int n)
 		x--;
 		count++;
 	}
+	arr[count] = '\0';
 	return (arr);
 }
 
@@ -87,15 +88,17 @@ char	*conditions(int n, char *arr)
 {
 	if ((n <= 9 && n > 0))
 	{
-		arr = (char *)malloc(1 * sizeof(char));
+		arr = (char *)malloc(2 * sizeof(char));
 		arr[0] = n + '0';
+		arr[1] = '\0';
 	}
 	if ((n >= -9 && n < 0))
 	{
 		n = n * -1;
-		arr = (char *)malloc(2 * sizeof(char));
+		arr = (char *)malloc(3 * sizeof(char));
 		arr[0] = '-';
 		arr[1] = n + '0';
+		arr[2] = '\0';
 	}
 	if (n == -2147483648)
 	{
