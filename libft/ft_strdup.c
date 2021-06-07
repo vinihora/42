@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 18:55:36 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/31 09:14:49 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/07 17:46:30 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strdup(const char *s)
 	count = 0;
 	i = ft_strlen(s);
 	new = malloc((i + 1) * sizeof(char));
+	if (!(new))
+		return (NULL);
 	while (s[count] != 0)
 	{
 		new[count] = s[count];
