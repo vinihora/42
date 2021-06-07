@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 11:26:38 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/22 15:32:06 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/07 18:36:26 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if (little == NULL || *little == '\0')
+	if (*little == '\0')
 		return ((char *)big);
 	while (*big && len-- >= ft_strlen(little))
 	{
