@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 19:26:06 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 19:13:01 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/07 19:14:13 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_itoa(int n)
 	if (!(arr))
 		return(NULL);
 	if (n < 0)
-		negative(n, arr, count, x);
+		negative(&n, arr, &count, &x);
 	while (x)
 	{
 		arr[count] = (n / ft_pow(10, (x - 1))) + '0';
