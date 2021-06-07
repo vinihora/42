@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 19:26:06 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 17:53:46 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/07 17:57:56 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ char	*ft_itoa(int n)
 		arr = (char *)ft_calloc((x + 2), sizeof(char));
 		arr[0] = '-';
 		count++;
+		n = n * -1;
 	}
 	while (x--)
 	{
-		arr[count] = ((unsigned int)n / ft_pow(10, (x - 1))) + '0';
-		n = (unsigned int)n % ft_pow(10, x - 1);
+		arr[count] = (n / ft_pow(10, (x - 1))) + '0';
+		n = n % ft_pow(10, x - 1);
 		count++;
 	}
 	return (arr);
