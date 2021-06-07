@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 11:44:12 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 08:28:03 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/07 08:38:22 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memccpy(void *rstdest, const void *rstsrc, int c, size_t n)
 	ptrdest = (unsigned char *)rstdest;
 	ptrsrc = (unsigned const char *)rstsrc;
 	i = 0;
-	while (i < n && n != 0)
+	while (i < n)
 	{
 		if (*((char *)ptrsrc + i) == (unsigned char)c)
 		{
