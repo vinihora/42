@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:49:35 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 19:50:19 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/07 19:51:54 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	i = 0;
 	if (!src)
-		return (NULL);
+		return (0);
 	if (!size)
 		return (ft_strlen(src));
 	if (size == 0)
