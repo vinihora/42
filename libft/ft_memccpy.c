@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 11:44:12 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 09:06:39 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/07 09:07:48 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 
 	dest2 = (unsigned char *)dest;
 	src2 = (unsigned char *)src;
-	if (n == NULL && c == NULL)
+	if (n == 0 && c == 0)
 		return (NULL);
 	while (n != 0)
 	{
