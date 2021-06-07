@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 18:59:49 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/23 22:56:52 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/05/23 19:49:33 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,53 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	front;
-	size_t	rear;
-	char	*str;
+	unsigned int 	i;
+	char			*res;
+	unsigned int	count;
+	unsigned int	count2;
+	
+	count = 0;
+	count2 = 0;
+	i = 0;
+	res = malloc(ft_strlen(s1) * sizeof(char));
 
-	str = 0;
-	if (s1 != 0 && set != 0)
+	if (*set == '\0')
+		return (NULL);
+	while (set[count])
 	{
-		front = 0;
-		rear = ft_strlen(s1);
-		while (s1[front] && ft_strchr(set, s1[front]))
-			front++;
-		while (s1[rear - 1] && ft_strchr(set, s1[rear - 1]) && rear > front)
-			rear--;
-		str = (char *)malloc(sizeof(char) * (rear - front + 1));
-		if (str)
-			ft_strlcpy(str, &s1[front], rear - front + 1);
+		if (s1[0] == set[count])
+		{
+			i++;
+			break;
+		}
+		count++;
 	}
-	return (str);
+	while (s1[i])
+	{
+		res[count2] = s1[i];
+		i++;
+		count2++;
+	}
+	count = 0;
+	while (set[count])
+	{
+		if (res[count2 - 1] == set[count])
+		{
+			res[count2 - 1] = '\0';
+			break;
+		}
+		count++;
+	}
+	return (res);
 }
+
+// #include <stdio.h>
+	
+// int main(void)
+// {
+// 	char a[] = "lualualuawww";
+// 	char *r;
+
+// 	r = ft_strtrim(a, "");
+// 	printf("%s", r);
+// }

@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 11:00:22 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/22 17:03:47 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/07 08:23:57 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	ptrdest = (unsigned char *)dest;
 	ptrsrc = (unsigned const char *)src;
 	i = 0;
+	if (src == NULL && dest == NULL)
+		return (NULL);
 	while (i < n)
 	{
 		*((char *)ptrdest + i) = *((char *)ptrsrc + i);
