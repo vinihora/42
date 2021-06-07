@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 19:26:06 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 19:14:13 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/07 19:15:42 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 unsigned int		how_much_digits(int n);
 unsigned long int	ft_pow(int base, int exp);
 char				*conditions(int n, char *arr);
-void	negative(int *n, char *arr, unsigned int *count, unsigned int *x);
+void	negative(int n, char *arr, unsigned int count, unsigned int x);
 
 char	*ft_itoa(int n)
 {
@@ -112,10 +112,10 @@ char	*conditions(int n, char *arr)
 	return (arr);
 }
 
-void	negative(int *n, char *arr, unsigned int *count, unsigned int *x)
+void	negative(int n, char *arr, unsigned int count, unsigned int x)
 {
-	arr = (char *)malloc((*x + 2) * sizeof(char));
+	arr = (char *)malloc((x + 2) * sizeof(char));
 	arr[0] = '-';
 	count++;
-	n = *n * -1;
+	n = n * -1;
 }
