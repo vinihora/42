@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 16:16:23 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/28 16:54:05 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/07 17:45:06 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	}
 	string = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!(string))
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
