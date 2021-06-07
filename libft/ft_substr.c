@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 15:50:25 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 18:40:59 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/07 18:45:58 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 				i++;
 			}
 			ret[count] = '\0';
-			return ((char *)ret);
 		}
 		i++;
 	}
+	ret[count] = '\0';
 	return (ret);
 }
