@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 15:50:25 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 18:39:32 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/07 18:40:59 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*ret;
 	unsigned int	count;
 
-	ret = malloc(len * sizeof(s));
+	ret = malloc((len + 1) * sizeof(s));
 	if (!(ret))
 		return (NULL);
 	i = 0;
