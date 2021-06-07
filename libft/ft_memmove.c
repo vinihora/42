@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 11:58:11 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 19:38:14 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/07 19:39:09 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	s = (char *)src;
 	d = (char *)dst;
 	i = 0;
-	if (!(dst) || !(src))
+	if (!(dst) && !(src))
 		return (NULL);
 	if (len == 0)
 		return (dst);
