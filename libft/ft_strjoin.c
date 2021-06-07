@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 17:00:23 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 20:04:30 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/07 20:05:29 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char			*res;
-	size_t			lenght;
 	unsigned int	i[2];
 
 	if (!(s1) && !(s2))
