@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 19:00:21 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 19:02:43 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/07 19:03:34 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_itoa(int n)
 	long	nbr;
 
 	nbr = n;
-	str = malloc(sizeof(char) * (ft_nbrlen(nbr) + 1));
+	str = malloc(sizeof(char) * (ft_strlen(nbr) + 1));
 	if (!(str))
 		return (NULL);
 	i = 0;
