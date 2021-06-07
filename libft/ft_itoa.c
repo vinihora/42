@@ -5,117 +5,63 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/26 19:26:06 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 19:16:47 by veduardo         ###   ########.fr       */
+/*   Created: 2021/06/07 19:24:15 by veduardo          #+#    #+#             */
+/*   Updated: 2021/06/07 19:26:14 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int		how_much_digits(int n);
-unsigned long int	ft_pow(int base, int exp);
-char				*conditions(int n, char *arr);
-void	negative(int n, char *arr, unsigned int count, unsigned int x);
+static int	ft_get_size(int n)
+{
+	int	size;
+
+	size = 0;
+	if (n <= 0)
+		size++;
+	while (n != 0)
+	{
+		n = n / 10;
+		size++;
+	}
+	return (size);
+}
+
+static void	ft_fill_res(int size, int offset, int n, char *res)
+{
+	while (size > offset)
+	{
+		res[size - 1] = n % 10 + '0';
+		n = n / 10;
+		size--;
+	}
+}
 
 char	*ft_itoa(int n)
 {
-	unsigned int	x;
-	char			*arr;
-	unsigned int	count;
+	int		offset;
+	int		size;
+	char	*res;
 
-	x = how_much_digits(n);
-	count = 0;
-	arr = 0;
-	if (conditions(n, arr))
-		return (conditions(n, arr));
-	arr = (char *)malloc((x + 1) * sizeof(char));
-	if (!(arr))
-		return(NULL);
-	if (n < 0)
-		negative(n, arr, count, x);
-	while (x)
-	{
-		arr[count] = (n / ft_pow(10, (x - 1))) + '0';
-		n = n % ft_pow(10, x - 1);
-		x--;
-		count++;
-	}
-	arr[count] = '\0';
-	return (arr);
-}
-
-unsigned int	how_much_digits(int n)
-{
-	unsigned int		i;
-	unsigned long int	x;
-
-	if (n < 0)
-		n = n * -1;
-	if (n == -2147483648LL)
-		return (0);
-	x = 1;
-	i = 0;
-	while ((n / x))
-	{
-		x = x * 10;
-		i++;
-	}
-	return (i);
-}
-
-unsigned long int	ft_pow(int base, int exp)
-{
-	int					save;
-	unsigned long int	saveb;
-
-	saveb = (unsigned long int)base;
-	save = base;
-	if (exp == 1)
-		return (base);
-	if (exp == 0)
-		return (1);
-	while (exp > 1)
-	{
-		saveb = saveb * save;
-		exp--;
-	}
-	return (saveb);
-}
-
-char	*conditions(int n, char *arr)
-{
-	if ((n <= 9 && n > 0))
-	{
-		arr = (char *)malloc(2 * sizeof(char));
-		arr[0] = n + '0';
-		arr[1] = '\0';
-	}
-	if ((n >= -9 && n < 0))
-	{
-		n = n * -1;
-		arr = (char *)malloc(3 * sizeof(char));
-		arr[0] = '-';
-		arr[1] = n + '0';
-		arr[2] = '\0';
-	}
+	offset = 0;
+	size = ft_get_size(n);
+	res = (char *)malloc(sizeof(char) * size + 1);
+	if (!(res))
+		return (NULL);
 	if (n == -2147483648)
 	{
-		arr = (char *)malloc(12 * sizeof(char));
-		ft_strlcpy(arr, "-2147483648", 12);
+		res[0] = '-';
+		res[1] = '2';
+		n = 147483648;
+		offset = 2;
 	}
-	if (n == 0)
+	if (n < 0)
 	{
-		arr = (char *)malloc((2) * sizeof(char));
-		arr[0] = '0';
-		arr[1] = '\0';
+		res[0] = '-';
+		offset = 1;
+		n = -n;
 	}
-	return (arr);
-}
-
-void	negative(int n, char *arr, unsigned int count, unsigned int x)
-{
-	arr = (char *)malloc((x + 2) * sizeof(char));
-	arr[0] = '-';
-	count++;
-	n = n * -1;
+	ft_fill_res(size, offset, n, res);
+	res[size] = '\0';
+	return (res);
 }
