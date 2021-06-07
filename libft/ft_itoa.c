@@ -5,113 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/26 19:26:06 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 18:05:58 by veduardo         ###   ########.fr       */
+/*   Created: 2021/06/07 19:00:21 by veduardo          #+#    #+#             */
+/*   Updated: 2021/06/07 19:02:43 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int		how_much_digits(int n);
-unsigned long int	ft_pow(int base, int exp);
-char				*conditions(int n, char *arr);
+static void	ft_putnbr_stock(long n, char *str, int *i)
+{
+	if (n > 9)
+	{
+		ft_putnbr_stock(n / 10, str, i);
+		ft_putnbr_stock(n % 10, str, i);
+	}
+	else
+		str[(*i)++] = n + '0';
+}
 
 char	*ft_itoa(int n)
 {
-	unsigned int	x;
-	char			*arr;
-	unsigned int	count;
+	char	*str;
+	int		i;
+	long	nbr;
 
-	x = how_much_digits(n);
-	count = 0;
-	arr = 0;
-	if (conditions(n, arr))
-		return (conditions(n, arr));
-	arr = (char *)malloc((x + 1) * sizeof(char));
-	if (!(arr))
-		return(NULL);
-	if (n < 0)
-	{
-		arr = (char *)malloc((x + 2) * sizeof(char));
-		arr[0] = '-';
-		count++;
-		n = n * -1;
-	}
-	while (x)
-	{
-		arr[count] = (n / ft_pow(10, (x - 1))) + '0';
-		n = n % ft_pow(10, x - 1);
-		x--;
-		count++;
-	}
-	arr[count] = '\0';
-	return (arr);
-}
-
-unsigned int	how_much_digits(int n)
-{
-	unsigned int		i;
-	unsigned long int	x;
-
-	if (n < 0)
-		n = n * -1;
-	if (n == -2147483648LL)
-		return (0);
-	x = 1;
+	nbr = n;
+	str = malloc(sizeof(char) * (ft_nbrlen(nbr) + 1));
+	if (!(str))
+		return (NULL);
 	i = 0;
-	while ((n / x))
+	if (nbr < 0)
 	{
-		x = x * 10;
-		i++;
+		str[i++] = '-';
+		nbr *= -1;
 	}
-	return (i);
-}
-
-unsigned long int	ft_pow(int base, int exp)
-{
-	int					save;
-	unsigned long int	saveb;
-
-	saveb = (unsigned long int)base;
-	save = base;
-	if (exp == 1)
-		return (base);
-	if (exp == 0)
-		return (1);
-	while (exp > 1)
-	{
-		saveb = saveb * save;
-		exp--;
-	}
-	return (saveb);
-}
-
-char	*conditions(int n, char *arr)
-{
-	if ((n <= 9 && n > 0))
-	{
-		arr = (char *)malloc(2 * sizeof(char));
-		arr[0] = n + '0';
-		arr[1] = '\0';
-	}
-	if ((n >= -9 && n < 0))
-	{
-		n = n * -1;
-		arr = (char *)malloc(3 * sizeof(char));
-		arr[0] = '-';
-		arr[1] = n + '0';
-		arr[2] = '\0';
-	}
-	if (n == -2147483648)
-	{
-		arr = (char *)malloc(12 * sizeof(char));
-		ft_strlcpy(arr, "-2147483648", 12);
-	}
-	if (n == 0)
-	{
-		arr = (char *)malloc((2) * sizeof(char));
-		arr[0] = '0';
-		arr[1] = '\0';
-	}
-	return (arr);
+	ft_putnbr_stock(nbr, str, &i);
+	str[i] = '\0';
+	return (str);
 }
