@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/23 15:50:25 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 19:47:28 by veduardo         ###   ########.fr       */
+/*   Created: 2021/06/11 16:29:27 by veduardo          #+#    #+#             */
+/*   Updated: 2021/06/11 16:29:59 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,26 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
-	char			*ret;
-	unsigned int	count;
+	char	*sub;
+	size_t	size_s;
+	size_t	max_len;
 
-	ret = malloc(len + 1 * sizeof(char));
-	if (!(ret))
+	size_s = ft_strlen(s);
+	if (s == NULL)
 		return (NULL);
-	i = 0;
-	count = 0;
-	while (s[i])
+	if (size_s < start)
 	{
-		if (i == start)
-		{
-			while (len-- && s[i])
-			{
-				ret[count] = s[i];
-				count++;
-				i++;
-			}
-			break ;
-		}
-		i++;
+		sub = (char *)ft_calloc(sizeof(char), 1);
+		if (!sub)
+			return (NULL);
+		return (sub);
 	}
-	ret[count] = '\0';
-	return (ret);
+	max_len = size_s - start;
+	if (len > max_len)
+		len = max_len;
+	sub = (char *)ft_calloc(sizeof(char), len + 1);
+	if (!sub)
+		return (NULL);
+	ft_strlcpy(sub, &s[start], len + 1);
+	return (sub);
 }

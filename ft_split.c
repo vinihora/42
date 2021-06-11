@@ -6,7 +6,7 @@
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 22:57:54 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 20:10:07 by veduardo         ###   ########.fr       */
+/*   Updated: 2021/06/11 16:41:41 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ static	char	**ft_get_arr(char const *str, char c)
 		i++;
 	}
 	arr = (char **)malloc((count + 1) * sizeof(char *));
+	if (!(arr))
+		return (NULL);
 	return (arr);
 }
 
