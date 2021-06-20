@@ -60,7 +60,7 @@ $(OBJ_SRC): $(SRC)
 bonus: $(OBJ_BONUS)
 	ar -rcs $(NAME) $(OBJ_BONUS)
 
-$(OBJ_BONUS): $(SRC)
+$(OBJ_BONUS): $(BONUS)
 	$(CC) $(FLAGS) -c $(BONUS)
 
 so:
