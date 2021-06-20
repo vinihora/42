@@ -5,25 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 18:55:36 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 17:46:30 by veduardo         ###   ########.fr       */
+/*   Created: 2021/06/20 12:12:16 by veduardo          #+#    #+#             */
+/*   Updated: 2021/06/20 12:12:19 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strdup(const char *s)
 {
 	int		i;
 	char	*new;
-	int		count;
+	size_t	count;
 
+	i = (ft_strlen(s));
+	new = (char *)malloc(sizeof(char) * (i + 1));
 	count = 0;
-	i = ft_strlen(s);
-	new = malloc((i + 1) * sizeof(char));
-	if (!(new))
+	if (!new)
 		return (NULL);
-	while (s[count] != 0)
+	while (s[count] != '\0')
 	{
 		new[count] = s[count];
 		count++;

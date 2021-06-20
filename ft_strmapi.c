@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/28 16:16:23 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 17:45:06 by veduardo         ###   ########.fr       */
+/*   Created: 2021/06/20 12:12:49 by veduardo          #+#    #+#             */
+/*   Updated: 2021/06/20 12:12:51 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,24 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*string;
-	int				i;
+	char			*str;
+	unsigned int	len;
+	unsigned int	i;
 
-	if (!s || !f)
-	{
+	if (s == NULL)
 		return (NULL);
-	}
-	string = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (!(string))
+	len = ft_strlen(s);
+	str = (char *)malloc(sizeof(char) * len + 1);
+	if (!str)
 		return (NULL);
 	i = 0;
-	while (s[i])
+	if (str == (NULL))
+		return (NULL);
+	while (i < len)
 	{
-		string[i] = f(i, s[i]);
+		str[i] = (*f)(i, s[i]);
 		i++;
 	}
-	string[i] = '\0';
-	return (string);
+	str[i] = '\0';
+	return (str);
 }

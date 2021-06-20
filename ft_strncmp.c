@@ -5,25 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/18 18:26:35 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/23 15:38:11 by veduardo         ###   ########.fr       */
+/*   Created: 2021/06/20 12:12:54 by veduardo          #+#    #+#             */
+/*   Updated: 2021/06/20 12:12:57 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	if (n == 0)
 		return (0);
-	while (s1[i] == s2[i])
+	while ((str1[i] != '\0' || str2[i] != '\0') && (i < n))
 	{
-		if ((s1[i] == '\0' && s2[i] == '\0') || i == (n - 1))
-			return (0);
+		if (str1[i] != str2[i])
+			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 		i++;
 	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	return (0);
 }

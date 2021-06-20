@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/19 11:11:08 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/23 15:45:24 by veduardo         ###   ########.fr       */
+/*   Created: 2021/06/20 12:13:08 by veduardo          #+#    #+#             */
+/*   Updated: 2021/06/20 12:14:48 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	unsigned int	lenght;
+	char	*str;
+	char	find;
+	size_t	i;
 
-	lenght = ft_strlen(s);
-	if (c == '\0')
-		return ((char *)s + lenght);
-	while (lenght--)
+	str = (char *)s;
+	find = c;
+	i = ft_strlen(s);
+	while (i > 0)
 	{
-		if ((char)c == s[lenght])
-		{
-			return (((char *)s + lenght));
-		}
+		if (s[i] == find)
+			return (str + i);
+		i--;
 	}
-	return (0);
+	if (s[i] == find)
+		return (str + i);
+	return (NULL);
 }

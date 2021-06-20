@@ -5,24 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/18 18:25:37 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/22 15:29:42 by veduardo         ###   ########.fr       */
+/*   Created: 2021/06/20 12:12:42 by veduardo          #+#    #+#             */
+/*   Updated: 2021/06/20 12:12:44 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
-size_t	ft_strlen(const char *str1)
+size_t	ft_strlen(const char *str)
 {
-	unsigned char	*line1;
-	unsigned int	i;
+	int	i;
 
-	line1 = (unsigned char *)str1;
 	i = 0;
-	while (*line1)
-	{
+	while (str[i] != '\0')
 		i++;
-		line1++;
-	}
 	return (i);
 }

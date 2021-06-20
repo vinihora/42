@@ -5,36 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/18 20:49:35 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 19:51:54 by veduardo         ###   ########.fr       */
+/*   Created: 2021/06/20 12:12:36 by veduardo          #+#    #+#             */
+/*   Updated: 2021/06/20 12:14:33 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 {
 	size_t	i;
+	size_t	len_src;
 
-	i = 0;
-	if (!src)
+	if (dst == NULL || src == NULL)
 		return (0);
-	if (!size)
-		return (ft_strlen(src));
-	if (size == 0)
+	len_src = ft_strlen(src);
+	i = 0;
+	if (n > 0)
 	{
-		while (src[i])
+		while ((src[i] != '\0') && (i < (n - 1)))
+		{
+			dst[i] = src[i];
 			i++;
-		return (i);
-	}
-	while (i < size - 1 && src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	if (i < size)
+		}
 		dst[i] = '\0';
-	while (src[i] != '\0')
-		i++;
-	return (i);
+		return (len_src);
+	}
+	if (n == 0)
+		dst[ft_strlen(dst)] = '\0';
+	return (len_src);
 }

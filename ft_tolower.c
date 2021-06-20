@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 16:59:33 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/02 12:53:27 by veduardo         ###   ########.fr       */
+/*   Created: 2021/06/20 12:13:23 by veduardo          #+#    #+#             */
+/*   Updated: 2021/06/20 12:14:38 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	if ((c >= 'A' && c <= 'Z'))
-		return (c + 32);
-	else
-		return (c);
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
 }

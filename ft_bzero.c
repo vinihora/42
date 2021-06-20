@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/17 10:27:10 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/22 19:59:59 by veduardo         ###   ########.fr       */
+/*   Created: 2021/06/20 11:59:01 by veduardo          #+#    #+#             */
+/*   Updated: 2021/06/20 12:15:26 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*ptr;
+	unsigned char	*array;
 	size_t			i;
 
 	i = 0;
-	ptr = s;
+	array = s;
 	while (i < n)
 	{
-		ptr[i] = 0;
+		array[i] = '\0';
 		i++;
 	}
 }

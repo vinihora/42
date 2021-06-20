@@ -5,63 +5,60 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/07 19:24:15 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 19:26:14 by veduardo         ###   ########.fr       */
+/*   Created: 2021/06/20 11:59:41 by veduardo          #+#    #+#             */
+/*   Updated: 2021/06/20 12:15:50 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_get_size(int n)
+static int	ft_check_len(int n)
 {
-	int	size;
+	int				i;
+	unsigned int	num;
 
-	size = 0;
-	if (n <= 0)
-		size++;
-	while (n != 0)
+	i = 1;
+	if (n < 0)
 	{
-		n = n / 10;
-		size++;
+		n *= -1;
+		num = n;
+		i++;
 	}
-	return (size);
-}
-
-static void	ft_fill_res(int size, int offset, int n, char *res)
-{
-	while (size > offset)
+	else
+		num = n;
+	while (num >= 10)
 	{
-		res[size - 1] = n % 10 + '0';
-		n = n / 10;
-		size--;
+		num = num / 10;
+		i++;
 	}
+	return (i);
 }
 
 char	*ft_itoa(int n)
 {
-	int		offset;
-	int		size;
-	char	*res;
+	unsigned int	num;
+	int				len;
+	char			*str;
+	int				neg;
 
-	offset = 0;
-	size = ft_get_size(n);
-	res = (char *)malloc(sizeof(char) * size + 1);
-	if (!(res))
+	len = ft_check_len(n);
+	str = (char *)ft_calloc(sizeof(char), (len + 1));
+	if (!str)
 		return (NULL);
-	if (n == -2147483648)
-	{
-		res[0] = '-';
-		res[1] = '2';
-		n = 147483648;
-		offset = 2;
-	}
+	neg = 0;
 	if (n < 0)
 	{
-		res[0] = '-';
-		offset = 1;
-		n = -n;
+		neg = -1;
+		n *= -1;
+		num = n;
 	}
-	ft_fill_res(size, offset, n, res);
-	res[size] = '\0';
-	return (res);
+	num = n;
+	while (len--)
+	{
+		str[len] = (num % 10) + '0';
+		num = num / 10;
+	}
+	if (neg < 0)
+		str[0] = '-';
+	return (str);
 }

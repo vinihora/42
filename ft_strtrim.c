@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/23 18:59:49 by veduardo          #+#    #+#             */
-/*   Updated: 2021/05/23 22:56:52 by veduardo         ###   ########.fr       */
+/*   Created: 2021/06/20 12:13:14 by veduardo          #+#    #+#             */
+/*   Updated: 2021/06/20 12:14:10 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,14 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	front;
-	size_t	rear;
-	char	*str;
+	size_t	len;
 
-	str = 0;
-	if (s1 != 0 && set != 0)
-	{
-		front = 0;
-		rear = ft_strlen(s1);
-		while (s1[front] && ft_strchr(set, s1[front]))
-			front++;
-		while (s1[rear - 1] && ft_strchr(set, s1[rear - 1]) && rear > front)
-			rear--;
-		str = (char *)malloc(sizeof(char) * (rear - front + 1));
-		if (str)
-			ft_strlcpy(str, &s1[front], rear - front + 1);
-	}
-	return (str);
+	if (s1 == NULL)
+		return (NULL);
+	while (*s1 && ft_strrchr(set, *s1))
+		s1++;
+	len = ft_strlen(s1);
+	while (len && ft_strrchr(set, s1[len]))
+		len--;
+	return (ft_substr(s1, 0, len + 1));
 }

@@ -5,35 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/07 20:33:58 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 20:36:11 by veduardo         ###   ########.fr       */
+/*   Created: 2021/06/20 12:12:29 by veduardo          #+#    #+#             */
+/*   Updated: 2021/06/20 12:12:32 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	dest_length;
-	size_t	src_length;
-	size_t	loop;
-	size_t	aux;
+	size_t	dst_len;
+	size_t	src_len;
+	size_t	i;
+	size_t	count;
 
-	src_length = ft_strlen(src);
-	if (size == 0)
-		return (src_length);
-	dest_length = 0;
-	while (dest[dest_length] && dest_length < size)
-		dest_length++;
-	aux = dest_length;
-	loop = 0;
-	if (dest_length < size)
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	i = dst_len;
+	count = 0;
+	if (dst_len >= size)
+		return (src_len + size);
+	while (src[count] != '\0' && i < (size - 1))
 	{
-		while (dest_length < (size - 1) && src[loop])
-			dest[dest_length++] = src[loop++];
-		dest[dest_length] = '\0';
+		dst[i] = src[count];
+		count++;
+		i++;
 	}
-	if (size - 1 < aux)
-		return (size + src_length);
-	return (src_length + aux);
+	dst[i] = '\0';
+	return (dst_len + src_len);
 }

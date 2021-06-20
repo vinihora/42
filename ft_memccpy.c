@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: veduardo <veduardo@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/17 11:44:12 by veduardo          #+#    #+#             */
-/*   Updated: 2021/06/07 09:07:48 by veduardo         ###   ########.fr       */
+/*   Created: 2021/06/20 12:10:51 by veduardo          #+#    #+#             */
+/*   Updated: 2021/06/20 12:10:53 by veduardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	unsigned char	*dest2;
-	unsigned char	*src2;
+	char		*d;
+	const char	*s;
+	size_t		i;
 
-	dest2 = (unsigned char *)dest;
-	src2 = (unsigned char *)src;
-	if (n == 0 && c == 0)
-		return (NULL);
-	while (n != 0)
+	d = (char *)dest;
+	s = (char *)src;
+	i = 0;
+	while (i < n)
 	{
-		*dest2 = *src2;
-		if (*src2 == (unsigned char)c)
-			return (dest2 + 1);
-		dest2++;
-		src2++;
-		n--;
+		d[i] = s[i];
+		if ((unsigned char)s[i] == (unsigned char)c)
+			return ((char *)dest + i + 1);
+		i++;
 	}
 	return (NULL);
 }
